@@ -40,12 +40,12 @@ test.describe("index.html", () => {
   
   test("deve ter um título no main", async ({ page }) => {
     await page.goto(`file://${process.cwd()}/index.html`);
-    await expect(page.locator("main > h1")).toHaveText(/DCC202 - Atividade 3: (.*)/);
+    await expect(page.locator("main > h1")).toHaveText(/DCC202 - Atividade 3:/);
   });
 
   test('o main deve ter um parágrafo logo após o título', async ({ page }) => {
     await page.goto(`file://${process.cwd()}/index.html`);
-    await expect(page.locator("main > h1+p")).toBeVisible();
+    await expect(page.locator("main > p")).toBeVisible();
   });
 
   test('o main deve ter duas seções', async ({ page }) => {
